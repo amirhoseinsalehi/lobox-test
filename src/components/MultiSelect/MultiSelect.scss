@@ -1,0 +1,97 @@
+$border-radius: 15px;
+$text-color: #292929;
+$primary-color: #3575e5;
+$primary-bg-color: #a7c7ff7d;
+$box-shadow: 0px 1px 5px #dfdfdf;
+
+.select-trigger {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  padding: 15px 20px;
+  font-size: 18px;
+  background: #ffffff;
+  border: 0;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+
+  &.is-open {
+    box-shadow: 0px 0px 10px $primary-color;
+  }
+
+  & > span {
+    color: $text-color;
+    font-size: 1em;
+  }
+
+  .selected-labels-box {
+    max-width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .results-box {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    max-height: 500px;
+    padding: 10px 15px;
+    overflow: auto;
+    transform: translateY(100%);
+    background-color: #ffffff;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    .smart-input {
+      width: 100%;
+      margin-bottom: 10px;
+      border: 0;
+      border-bottom: 1px solid #bfbfbf;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    ul {
+      // padding: 10px 15px;
+      li {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 5px 8px;
+        margin-top: 3px;
+        font-size: 0.9em;
+        color: $text-color;
+        border-radius: 5px;
+        transition: all 0.3s;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        & > span {
+          display: flex;
+          justify-content: space-between;
+
+          img {
+            margin-left: 5px;
+          }
+        }
+
+        &.selected {
+          color: $primary-color;
+          background-color: $primary-bg-color;
+        }
+
+        &:hover {
+          background-color: $primary-bg-color;
+        }
+      }
+    }
+  }
+}
